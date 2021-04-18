@@ -1,0 +1,29 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+li {
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+.validation-input {
+  border: 3px solid #bdbdbd;
+}
+
+.valid {
+  border-color: #4caf50;
+}
+
+.invalid {
+  border-color: #f44336;
+}
