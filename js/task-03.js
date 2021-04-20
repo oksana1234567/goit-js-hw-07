@@ -17,21 +17,35 @@ const images = [
 ];
 
 
+// const galleryContainerEl = document.querySelector('#gallery');
+// console.log(galleryContainerEl);
+
+// const makeGallery = function (images) {
+  
+//   return images.map(images => {
+    
+//     galleryContainerEl.insertAdjacentHTML('beforeend', `<li class="galleryElement"> <img src="${images.url}" alt="${images.alt}" width="450px"/> </li>`);
+//     return galleryContainerEl;
+  
+//   })
+// }
+
+// makeGallery(images);
+
+
+
 const galleryContainerEl = document.querySelector('#gallery');
 console.log(galleryContainerEl);
-
+let newLiElement = '';
 const makeGallery = function (images) {
   
   return images.map(images => {
-    
-    galleryContainerEl.insertAdjacentHTML('beforeend', `<li class="galleryElement"> <img src="${images.url}" alt="${images.alt}" width="450px"/> </li>`);
+    newLiElement = `<li class="galleryElement"> <img src="${images.url}" alt="${images.alt}" width="450px"/> </li>`;
+    console.log(newLiElement);
+    galleryContainerEl.insertAdjacentHTML('beforeend', newLiElement);
     return galleryContainerEl;
   
   })
 }
 
 makeGallery(images);
-
-
-
-

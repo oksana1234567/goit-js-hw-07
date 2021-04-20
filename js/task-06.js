@@ -11,17 +11,37 @@ let numberRequstedString = refs.lengthEl.dataset.length;
 
 let numberRequsted = Number(numberRequstedString);
 
-const checkIfBlur = function () {
-  refs.inputEl.addEventListener('input', onInputChange) }
+// const checkIfBlur = function () {
+//   refs.inputEl.addEventListener('input', onInputChange) }
 
-refs.inputEl.addEventListener('blur', checkIfBlur);
+// refs.inputEl.addEventListener('blur', checkIfBlur);
+
+// const onInputChange = function (event) {
+//   if (event.currentTarget.value.length !== numberRequsted) {
+//     refs.inputEl.classList.add('invalid');
+//   } else {
+    
+//     refs.inputEl.classList.replace('invalid', 'valid')
+//   }
+// }
+
+// const checkIfBlur = function () {
+//   refs.inputEl.addEventListener('input', onInputChange) }
+
+
 
 const onInputChange = function (event) {
   if (event.currentTarget.value.length !== numberRequsted) {
     refs.inputEl.classList.add('invalid');
+    refs.inputEl.classList.remove('valid')
   } else {
+    refs.inputEl.classList.remove('invalid')
+    refs.inputEl.classList.add('valid')
     
-    refs.inputEl.classList.replace('invalid', 'valid')
   }
 }
 
+const checking = function () {
+  refs.inputEl.addEventListener('blur', onInputChange)
+};
+checking();
