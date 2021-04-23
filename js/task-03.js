@@ -34,18 +34,33 @@ const images = [
 
 
 
+// const galleryContainerEl = document.querySelector('#gallery');
+// console.log(galleryContainerEl);
+// let newLiElement = '';
+// const makeGallery = function (images) {
+  
+//   return images.map(images => {
+//     newLiElement = `<li class="galleryElement"> <img src="${images.url}" alt="${images.alt}" width="450px"/> </li>`;
+//     console.log(newLiElement);
+//     galleryContainerEl.insertAdjacentHTML('beforeend', newLiElement);
+//     return galleryContainerEl;
+  
+//   })
+// }
+
+// makeGallery(images);
+
 const galleryContainerEl = document.querySelector('#gallery');
 console.log(galleryContainerEl);
 let newLiElement = '';
-const makeGallery = function (images) {
-  
-  return images.map(images => {
-    newLiElement = `<li class="galleryElement"> <img src="${images.url}" alt="${images.alt}" width="450px"/> </li>`;
-    console.log(newLiElement);
-    galleryContainerEl.insertAdjacentHTML('beforeend', newLiElement);
-    return galleryContainerEl;
-  
+let newLiElementCollection = [];
+
+const makeLiElement = images => {
+  return images.map(image => {
+    newLiElement = `<li class="galleryElement"> <img src="${image.url}" alt="${image.alt}" width="450px"/> </li>`;
+    return newLiElement;
   })
 }
 
-makeGallery(images);
+const elements = makeLiElement(images).join('');
+galleryContainerEl.insertAdjacentHTML('beforeend', elements);
